@@ -20,10 +20,12 @@ package com.android.server.nearby.common.bluetooth;
  * {@link Exception} thrown during a Bluetooth operation.
  */
 public class BluetoothException extends Exception {
+    /** Constructor. */
     public BluetoothException(String message) {
         super(message);
     }
 
+    /** Constructor. */
     public BluetoothException(String message, Throwable throwable) {
         super(message, throwable);
     }
