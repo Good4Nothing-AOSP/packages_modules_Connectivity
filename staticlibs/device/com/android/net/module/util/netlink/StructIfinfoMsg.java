@@ -58,22 +58,22 @@ public class StructIfinfoMsg extends Struct {
     }
 
     /**
-     * Parse a rtnetlink link message header from a {@link ByteBuffer}.
+     * Parse an ifinfomsg struct from a {@link ByteBuffer}.
      *
-     * @param byteBuffer The buffer from which to parse the rtnetlink link message header.
-     * @return the parsed rtnetlink link message header, or {@code null} if the rtnetlink message
-     *         header could not be parsed successfully (for example, if it was truncated).
+     * @param byteBuffer The buffer from which to parse the ifinfomsg.
+     * @return the parsed ifinfomsg struct, or {@code null} if the ifinfomsg struct
+     *         could not be parsed successfully (for example, if it was truncated).
      */
     @Nullable
     public static StructIfinfoMsg parse(@NonNull final ByteBuffer byteBuffer) {
         if (byteBuffer.remaining() < STRUCT_SIZE) return null;
 
         // The ByteOrder must already have been set to native order.
-        return StructIfinfoMsg.parse(StructIfinfoMsg.class, byteBuffer);
+        return Struct.parse(StructIfinfoMsg.class, byteBuffer);
     }
 
     /**
-     * Write ifinfomsg to {@link ByteBuffer}.
+     * Write an ifinfomsg struct to {@link ByteBuffer}.
      */
     public void pack(@NonNull final ByteBuffer byteBuffer) {
         // The ByteOrder must already have been set to native order.
