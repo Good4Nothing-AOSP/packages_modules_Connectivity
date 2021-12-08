@@ -21,7 +21,6 @@ import android.bluetooth.BluetoothAdapter;
 /**
  *  Nearby dependency injector. To be used for accessing various Nearby class instances and as a
  *  handle for mock injection.
- *
  */
 public interface Injector {
 
