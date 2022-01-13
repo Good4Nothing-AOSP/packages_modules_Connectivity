@@ -40,4 +40,5 @@ parcelable NativeNetworkConfig {
   int permission;
   boolean secure;
   android.net.NativeVpnType vpnType = android.net.NativeVpnType.PLATFORM;
+  boolean excludeLocalRoutes = false;
 }
