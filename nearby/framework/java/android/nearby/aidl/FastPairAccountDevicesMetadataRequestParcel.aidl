@@ -17,6 +17,7 @@
 package android.nearby.aidl;
 
 import android.accounts.Account;
+import android.nearby.aidl.ByteArrayParcel;
 
 /**
  * Request details for Metadata of Fast Pair devices associated with an account.
@@ -24,4 +25,5 @@ import android.accounts.Account;
  */
 parcelable FastPairAccountDevicesMetadataRequestParcel {
     Account account;
+    ByteArrayParcel[] accountKeys;
 }
