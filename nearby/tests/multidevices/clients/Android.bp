@@ -24,15 +24,12 @@ android_library {
     ],
     sdk_version: "test_current",
     static_libs: [
-        "NearbyMultiDevicesClientsFastPairLiteProtos",
+        "MoblySnippetHelperLib",
+        "NearbyFastPairProviderLib",
         "androidx.test.core",
-        "error_prone_annotations",
-        "fast-pair-lite-protos",
-        "framework-annotations-lib",
         "gson-prebuilt-jar",
         "kotlin-stdlib",
         "mobly-snippet-lib",
-        "service-nearby",
     ],
 }
 
