@@ -16,7 +16,9 @@
 
 package android.nearby;
 
+import android.nearby.IBroadcastListener;
 import android.nearby.IScanListener;
+import android.nearby.BroadcastRequest;
 import android.nearby.ScanRequest;
 
 /**
@@ -29,4 +31,8 @@ interface INearbyManager {
     void registerScanListener(in ScanRequest scanRequest, in IScanListener listener);
 
     void unregisterScanListener(in IScanListener listener);
+
+    void startBroadcast(in BroadcastRequest broadcastRequest, in IBroadcastListener callback);
+
+    void stopBroadcast(in IBroadcastListener callback);
 }
