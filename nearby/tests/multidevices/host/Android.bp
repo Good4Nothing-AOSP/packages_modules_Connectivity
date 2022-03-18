@@ -30,8 +30,10 @@ python_test_host {
         unit_test: false,
     },
     data: [
-        // Package the snippet with the Mobly test
+        // Package the snippet with the Mobly test.
         ":NearbyMultiDevicesClientsSnippets",
+        // Package the data provider with the Mobly test.
+        ":NearbyFastPairSeekerDataProvider",
     ],
 }
 
