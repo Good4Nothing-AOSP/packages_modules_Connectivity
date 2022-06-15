@@ -42,7 +42,6 @@ import java.time.Clock;
 
 import service.proto.Cache;
 import service.proto.Rpcs;
-
 public class PairingProgressHandlerBaseTest {
     @Mock
     Locator mLocator;
@@ -68,7 +67,6 @@ public class PairingProgressHandlerBaseTest {
 
     @Test
     public void createHandler_halfSheetSubsequentPairing_notificationPairingHandlerCreated() {
-
         DiscoveryItem discoveryItem = FakeDiscoveryItems.newFastPairDiscoveryItem(mContextWrapper);
         discoveryItem.setStoredItemForTest(
                 discoveryItem.getStoredItemForTest().toBuilder()
@@ -99,6 +97,22 @@ public class PairingProgressHandlerBaseTest {
                 createProgressHandler(null, discoveryItem, /* isRetroactivePair= */ false);
 
         assertThat(progressHandler).isInstanceOf(HalfSheetPairingProgressHandler.class);
+    }
+
+    @Test
+    public void skipWaitingScreenUnlock() {
+        DiscoveryItem discoveryItem = FakeDiscoveryItems.newFastPairDiscoveryItem(mContextWrapper);
+        discoveryItem.setStoredItemForTest(
+                discoveryItem.getStoredItemForTest().toBuilder()
+                        .setAuthenticationPublicKeySecp256R1(ByteString.copyFrom(ACCOUNT_KEY))
+                        .setFastPairInformation(
+                                Cache.FastPairInformation.newBuilder()
+                                        .setDeviceType(Rpcs.DeviceType.HEADPHONES).build())
+                        .build());
+
+        PairingProgressHandlerBase progressHandler =
+                createProgressHandler(ACCOUNT_KEY, discoveryItem, /* isRetroactivePair= */ false);
+        assertThat(progressHandler.skipWaitingScreenUnlock()).isFalse();
     }
 
     private PairingProgressHandlerBase createProgressHandler(
