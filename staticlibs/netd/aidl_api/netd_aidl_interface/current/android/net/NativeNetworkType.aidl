@@ -36,4 +36,5 @@ package android.net;
 enum NativeNetworkType {
   PHYSICAL = 0,
   VIRTUAL = 1,
+  PHYSICAL_LOCAL = 2,
 }
