@@ -169,6 +169,7 @@ interface INetd {
   void networkAddUidRangesParcel(in android.net.netd.aidl.NativeUidRangeConfig uidRangesConfig);
   void networkRemoveUidRangesParcel(in android.net.netd.aidl.NativeUidRangeConfig uidRangesConfig);
   void ipSecMigrate(in android.net.IpSecMigrateInfoParcel migrateInfo);
+  void setNetworkAllowlist(in android.net.netd.aidl.NativeUidRangeConfig[] allowedNetworks);
   const int IPV4 = 4;
   const int IPV6 = 6;
   const int CONF = 1;
@@ -182,7 +183,7 @@ interface INetd {
   const int PENALTY_POLICY_ACCEPT = 1;
   const int PENALTY_POLICY_LOG = 2;
   const int PENALTY_POLICY_REJECT = 3;
-  const int CLAT_MARK = -559038041;
+  const int CLAT_MARK = 0xdeadc1a7;
   const int LOCAL_NET_ID = 99;
   const int DUMMY_NET_ID = 51;
   const int UNREACHABLE_NET_ID = 52;
@@ -195,7 +196,7 @@ interface INetd {
   const int NO_PERMISSIONS = 0;
   const int PERMISSION_INTERNET = 4;
   const int PERMISSION_UPDATE_DEVICE_STATS = 8;
-  const int PERMISSION_UNINSTALLED = -1;
+  const int PERMISSION_UNINSTALLED = (-1);
   /**
    * @deprecated use FIREWALL_ALLOWLIST.
    */
