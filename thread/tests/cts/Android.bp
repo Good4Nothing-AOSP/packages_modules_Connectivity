@@ -42,6 +42,7 @@ android_test {
         "guava",
         "guava-android-testlib",
         "net-tests-utils",
+        "ThreadNetworkTestUtils",
         "truth",
     ],
     libs: [
