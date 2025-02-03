@@ -227,9 +227,21 @@ interface INetd {
   const int PERMISSION_NONE = 0;
   const int PERMISSION_NETWORK = 1;
   const int PERMISSION_SYSTEM = 2;
+  /**
+   * @deprecated usage is internal to module.
+   */
   const int NO_PERMISSIONS = 0;
+  /**
+   * @deprecated usage is internal to module.
+   */
   const int PERMISSION_INTERNET = 4;
+  /**
+   * @deprecated usage is internal to module.
+   */
   const int PERMISSION_UPDATE_DEVICE_STATS = 8;
+  /**
+   * @deprecated usage is internal to module.
+   */
   const int PERMISSION_UNINSTALLED = (-1) /* -1 */;
   /**
    * @deprecated use FIREWALL_ALLOWLIST.
