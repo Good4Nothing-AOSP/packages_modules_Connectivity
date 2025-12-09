@@ -37,4 +37,5 @@ parcelable RouteInfoParcel {
   @utf8InCpp String ifName;
   @utf8InCpp String nextHop;
   int mtu;
+  boolean isLocalRoute;
 }
